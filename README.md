@@ -4,7 +4,10 @@
 
 You can see faces that change with the number of source code errors.
 
-You can disable sound in the configuration (`Uncanny: Sound`).
+Added:
+- Text becomes darker red with more errors/warnings.
+- A certain number of warnings equal the same weight as one error.
+- Audio works, must click to enable initially.
 
 ## Usage
 

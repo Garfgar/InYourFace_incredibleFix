@@ -40,41 +40,54 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-	  "viewsContainers": {
-		"activitybar": [{
-		  "id": "custom-activitybar",
-		  "title": "In Your Face",
-		  "icon": "assets/logo_bito.svg"
-		}]
-	  },
-	  "views": {
-		"custom-activitybar": [{
-		  "type": "webview",
-		  "id": "in-your-face.openview",
-		  "name": "In Your Face",
-		  "contextualTitle": "In Your Face"
-		}]
-	  },
-	  "commands": [{
-		  "command": "in-your-face.openview.focus",
-		  "category": "In Your Face",
-		  "title": "Open Sidebar",
-		  "icon": "$(clear-all)"
-		}
-	  ],
-		"configuration": [
-			{
-				"title": "Uncanny",
-				"properties": {
-					"uncanny.sound": {
-						"type": "boolean",
-						"description": "Whether the sounds should be played",
-						"default": true
-					}
-				}
-			}
-		]
-	},
+  "viewsContainers": {
+    "activitybar": [{
+      "id": "custom-activitybar",
+      "title": "In Your Face",
+      "icon": "assets/logo_bito.svg"
+    }]
+  },
+  "views": {
+    "custom-activitybar": [{
+      "type": "webview",
+      "id": "in-your-face.openview",
+      "name": "In Your Face",
+      "contextualTitle": "In Your Face"
+    }]
+  },
+  "commands": [
+    {
+      "command": "in-your-face.openview.focus",
+      "category": "In Your Face",
+      "title": "Open Sidebar",
+      "icon": "$(clear-all)"
+    }
+  ],
+
+  "configuration": [
+    {
+      "title": "Uncanny",
+      "properties": {
+        "uncanny.sound": {
+          "type": "boolean",
+          "description": "Whether the sounds should be played",
+          "default": true
+        }
+      }
+    },
+    {
+      "title": "In Your Face Settings",
+      "properties": {
+        "inYourFace.enableSounds": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable sound effects when the error face changes.",
+          "scope": "window"
+        }
+      }
+    }
+  ]
+},
 	"scripts": {
 	  "vscode:prepublish": "npm run compile",
 	  "compile": "tsc -p ./",
